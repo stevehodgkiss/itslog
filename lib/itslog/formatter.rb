@@ -32,7 +32,8 @@ module Itslog
     extend ActiveSupport::Concern
 
     def call_with_namespace(message, *args)
-      logger.namespace = message.split('.').last if logger
+      namespace = message.split('.').last if logger
+      logger.namespace = namespace.present? ? namespace : ''
       call_without_namespace(message, *args)
     end
 
