@@ -37,7 +37,6 @@ module Itslog
     end
 
     included do
-      puts '~> itslog enabled'
       alias_method_chain :call, :namespace
     end
   end
