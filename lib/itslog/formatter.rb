@@ -18,7 +18,7 @@ module Itslog
       msg << "#{time.split.last} "
       msg << "#{namespace}: "
       msg << colors[5]
-      msg << message.strip
+      msg << message.to_s.strip
 
       add_without_format(severity, msg, progname, &block)
     end
